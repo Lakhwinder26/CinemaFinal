@@ -1,38 +1,377 @@
-.App {
-  text-align: center;
+/* ASIDE */
+.aside {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid white; */
+    width: 19%;
+    min-height: 200vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+    display: flex;
+    margin-bottom: 2vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo__img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo__text {
+    font-size: 20px;
+    align-self: center;
 }
 
-.App-link {
-  color: #61dafb;
+.categories {
+    flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.categories>p {
+    color: gray;
+    font-size: 13px;
 }
+
+.category {
+    display: flex;
+    margin-top: 25px;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 8px 6px 8px 10px;
+    border-radius: 12px;
+    transition: all 0.3s;
+    /* border: 1px solid white; */
+
+}
+
+.category:hover {
+    filter: brightness(70%);
+    cursor: pointer;
+    background-color: #1c2133
+}
+
+.category:hover .svg {
+    color: #1f71ff;
+    transform: scale(1.5);
+    transition: 0.3s;
+}
+
+.category p {
+    margin-left: 10px;
+}
+
+.end-text {
+    color: gray;
+    width: 71%;
+    font-size: 13px;
+    align-self: center;
+}
+
+@media screen and (max-width: 991px) {
+    .end-text {
+        display: none;
+    }
+
+    .aside {
+        padding: 20px;
+        display: flex;
+
+        /* border: 2px solid white; */
+        min-height: min-content;
+
+    }
+
+    .categories {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .category {
+        margin-right: 10px;
+    }
+
+    .categories p {
+        display: none;
+    }
+
+    .main {
+        /* border: 2px solid white; */
+        min-width: 100%;
+        height: 100%;
+    }
+
+    .category p {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 630px){
+    .category p {
+        display: none;
+    }
+}
+
+/* //////////////////////////////////////////////// */
+/* Main */
+.main {
+    /* border: 2px solid white; */
+    width: 80%;
+    padding: 20px;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+}
+
+.input {
+    max-width: 60%;
+    flex: 1;
+    display: flex;
+    background: #1c2133;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: grey;
+}
+
+.input__logo {
+    margin-right: 10px;
+    align-self: center;
+}
+
+.input__text {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: grey;
+}
+
+.lang {
+    display: flex;
+    background: #1c2133;
+    padding: 5px 8px;
+    border-radius: 10px;
+    color: grey;
+}
+
+.lang__logo {
+    align-self: center;
+    margin-right: 5px;
+}
+
+.lang__text {
+    align-self: center;
+    font-size: 12.5px;
+}
+
+
+.buttons button {
+    background: #1c2133;
+    outline: none;
+    border: none;
+    margin: 0px 0px 0 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #1f71ff;
+    font-weight: 600;
+    transition: all 0.4s;
+}
+
+.buttons button:hover {
+    background-color: #1f71ff;
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+    .input{
+       min-width: 40%;
+       margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 612px) {
+    .header {
+       flex-wrap: wrap;
+    }
+    .input{
+        margin-right: 20px;
+        margin-bottom:20px;
+    }
+    .lang{
+        margin-bottom:20px;
+    }
+}
+
+/* /////////////////////////////////////////////////////////// */
+/* Carousel */
+.carousel {
+    position: relative;
+}
+
+.glyphicon {
+    position: absolute;
+    color: white;
+    top: 47%;
+    transition: color 0.2s;
+}
+
+.glyphicon:hover {
+    color: #1f71ff;
+}
+
+.glyphicon-chevron-left {
+    left: 1.5%
+}
+
+.glyphicon-chevron-right {
+    left: 97%;
+}
+
+.carousel .item {
+    height: 55vh;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* .item img {
+    object-fit: contain;
+} */
+.caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    padding: 50px;
+}
+
+.play {
+    display: flex;
+}
+
+.play>p {
+    margin: 10px;
+    background: #1c2133;
+    opacity: 0.7;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 770px) {
+
+    .carousel .item {height: min-content;}
+    .caption{
+        font-size: 1.5vw;
+        padding: 20px;
+    }
+    .caption h3{
+        font-size: 3vw;
+        
+    }
+    .play{
+        width:200%;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .carousel{
+        display: none;
+    }
+}
+/* //////////////////////////////////////////// */
+/* MOVIE Collections */
+
+.movieColl {
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    letter-spacing: 2px;
+
+}
+
+.info button {
+    background-color: lightgray;
+    border: none;
+    color: black;
+    padding: 1px 10px;
+    border-radius: 10px
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 24%;
+    height: auto;
+    /* border: 1px solid white;  */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #101925;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 1);
+}
+
+.card img {
+    width: 100%;
+    height: 60%;
+}
+
+.card__info {
+    padding: 10px;
+}
+
+@media screen and (max-width: 991px) {
+
+    .card {
+        padding: 0px 0px 10px 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        width: 32%;
+        margin: 2px;
+        margin-bottom: 10px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 650px) {
+    .card {
+        width: 45%;
+        margin: 2px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    .card {
+        width: 99%;
+        margin: 2px;
+        margin-bottom: 10px;
+    }
+}
+
